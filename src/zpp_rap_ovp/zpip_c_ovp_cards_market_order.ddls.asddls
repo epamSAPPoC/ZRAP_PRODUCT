@@ -125,11 +125,11 @@ define view zpip_c_ovp_cards_market_order
                                 qualifier:            'FaceSide',
                                 position:              10,
                                 label:                'Product ID',
-                                semanticObjectAction: 'manage',
+                                semanticObjectAction: 'listreportaction',
                                 type:                  #FOR_INTENT_BASED_NAVIGATION 
                              }]
            }
-      @Consumption.semanticObject: 'zpip_products_git'
+      @Consumption.semanticObject: 'listreportsemanticobject'
       Orderid,
       
       @UI: { 
@@ -147,11 +147,11 @@ define view zpip_c_ovp_cards_market_order
            }
       @UI.identification: [{ //StackCard  Orders List
                              qualifier:            'FlipSide',
-                             semanticObjectAction: 'manage',
+                             semanticObjectAction: 'listreportaction',
                              type:                  #FOR_INTENT_BASED_NAVIGATION,
                              position:              10
                           }]
-      @Consumption.semanticObject: 'zpip_products_git'
+      @Consumption.semanticObject: 'listreportsemanticobject'
       ProductName,
       
       @UI: { 
@@ -167,6 +167,9 @@ define view zpip_c_ovp_cards_market_order
                             position:   20
                          }]
            }
+      @Consumption.semanticObject: 'listreportsemanticobject'
+      @UI.identification:          [{ semanticObjectAction: 'listreportaction',
+                                      type:                 #FOR_INTENT_BASED_NAVIGATION }]
       CountryName,
       
       //Chart Tab1 Total Quantity of Orders
@@ -178,6 +181,9 @@ define view zpip_c_ovp_cards_market_order
                      }
       @Aggregation.default: #SUM
       @EndUserText.label: 'Quantity by Countrys'
+      @Consumption.semanticObject: 'alpsemantic'
+      @UI.identification: [{ semanticObjectAction: 'alpreportaction',
+                             type:                 #FOR_INTENT_BASED_NAVIGATION }]
       CountByCountry,
       
       //Chart Tab2 Total Quantity of Orders
@@ -189,6 +195,9 @@ define view zpip_c_ovp_cards_market_order
                      }
       @Aggregation.default: #SUM
       @EndUserText.label: 'Quantity by Product Groups'
+      @Consumption.semanticObject: 'alpsemantic'
+      @UI.identification: [{ semanticObjectAction: 'alpreportaction',
+                             type:                 #FOR_INTENT_BASED_NAVIGATION }]
       CountByProdGrp,
      
       PhaseName,
@@ -201,7 +210,7 @@ define view zpip_c_ovp_cards_market_order
                       }]
       CalendarYear,
       
-      @UI.fieldGroup: [{ //SrackCard  Orders List
+      @UI.fieldGroup: [{ //StackCard  Orders List
                          qualifier: 'StackOrdersListGenInf',   
                          position:   40,
                          label: 'Delivery'
@@ -271,6 +280,9 @@ define view zpip_c_ovp_cards_market_order
           }
       @EndUserText.label:   'Average Gross Income Percentage'
       @Aggregation.default: #AVG
+      @Consumption.semanticObject: 'alpsemantic'
+      @UI.identification: [{ semanticObjectAction: 'alpreportaction',
+                             type:                 #FOR_INTENT_BASED_NAVIGATION }]
       GrossIncomPercentage,
       
       Percentage,

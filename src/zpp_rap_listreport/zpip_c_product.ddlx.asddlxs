@@ -70,16 +70,16 @@ annotate view zpip_c_product with
                  type:               #CHART_REFERENCE,
                  label:              'Items Quantity',
                  position:            23,
-                 targetQualifier:    'MarketQuantity',
-                 targetElement:      '_MarketChart'
+                 targetQualifier:    'OrderQuantity',
+                 targetElement:      '_Market'
               },
               {  id:                 'ChartMarketAmounts',
                  purpose:            #STANDARD,
                  type:               #CHART_REFERENCE,
                  label:              'Total Amounts',
                  position:            25,
-                 targetQualifier:    'MarketAmounts',
-                 targetElement:      '_MarketChart'
+                 targetQualifier:    'OrderAmounts',
+                 targetElement:      '_Market'
               },
               {
                  id:                 'AdminDataCollection',
@@ -162,21 +162,27 @@ annotate view zpip_c_product with
   ProdUuid;
 
   @UI: { 
-         lineItem:       [{ position: 10, importance: #HIGH }],
-         identification: [{ position: 10, label: 'Product ID'}],
+         lineItem:       [{ position: 10, importance: #HIGH },
+                          { semanticObjectAction: 'ovpreportaction', type: #FOR_INTENT_BASED_NAVIGATION }
+                         ],
+         identification: [{ position: 10, label: 'Product ID' }],
          selectionField: [{ position: 10 }],
          fieldGroup:     [{ position: 10, qualifier: 'BasicData'}],
          dataPoint:      {  title:'Product ID', qualifier: 'Prodid' }
        }
+  @Consumption.semanticObject: 'ovpsemanticobject'
   Prodid;
   
   @UI: { 
-         lineItem:       [ { position: 20, importance: #HIGH }     ],
-         identification: [ { position: 20, label: 'Product gr.' }  ],
+         lineItem:       [ { position: 20, importance: #HIGH },
+                           { semanticObjectAction: 'alpreportaction', type: #FOR_INTENT_BASED_NAVIGATION } 
+                         ],
+         identification: [ { position: 20, label: 'Product gr.' } ],
          selectionField: [ { position: 20 } ],
          fieldGroup:     [ { position: 20, qualifier: 'BasicData'} ],
          textArrangement: #TEXT_LAST
        }
+  @Consumption.semanticObject: 'alpsemantic'
   Pgid;
   
   @UI.fieldGroup: [ { position: 25, qualifier: 'BasicData', label: 'Product Group Translation'} ]
@@ -291,6 +297,6 @@ annotate view zpip_c_product with
                      type:           #AS_FIELDGROUP,
                      valueQualifier: 'AllMeasures'
                   }]
-   Measures;
+  Measures;
   
-}
+} 

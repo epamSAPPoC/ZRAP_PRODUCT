@@ -30,9 +30,11 @@ define root view entity zpip_i_product
           then 4
           else 0
       end               as PhaseCriticality,
-          
+      @Semantics.quantity.unitOfMeasure: 'SizeUom'    
       height            as Height, 
+      @Semantics.quantity.unitOfMeasure: 'SizeUom'
       depth             as Depth,  
+      @Semantics.quantity.unitOfMeasure: 'SizeUom'
       width             as Width,  
       size_uom          as SizeUom,
 
@@ -79,7 +81,8 @@ define root view entity zpip_i_product
       //total ETag field
       @Semantics.systemDateTime.lastChangedAt: true
       last_changed_at   as LastChangedAt,
-      cast( '   ' as msehi ) as Measures,
+//      cast( '   ' as msehi ) as Measures,
+      cast('' as char30 ) as Measures,
 
       /* Associations */
       _Market,
