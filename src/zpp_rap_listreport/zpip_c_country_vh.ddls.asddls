@@ -1,7 +1,7 @@
 @AbapCatalog.sqlViewName: 'ZPIPCOUNTRYVH'
 @AbapCatalog.compiler.compareFilter: true
 @AbapCatalog.preserveKey: true
-@AccessControl.authorizationCheck: #CHECK
+@AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Country Help View'
 
 @ObjectModel.resultSet.sizeCategory: #XS

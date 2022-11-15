@@ -17,6 +17,7 @@ define view zpip_i_ovp_market_order
   key order_uuid                                             as OrderUuid,
       _Market._Country.Country                               as CountryName,
       1                                                      as CountByCountry,
+      _Product.Pgid                                          as Pgid,
       _Product._ProdGrp.Pgname                               as ProductName,
       1                                                      as CountByProdGrp,
       _Product._Phase.Phase                                  as PhaseName,

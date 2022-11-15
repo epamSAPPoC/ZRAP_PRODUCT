@@ -15,6 +15,15 @@ define root view entity zpip_c_product
       @Search.defaultSearchElement: true   
       Prodid,
       
+      @Consumption: {
+                     semanticObject: 'ovpsemanticobject',
+                     semanticObjectMapping.additionalBinding: [ 
+                                                               {
+                                                                 localElement: 'ProdGrName', 
+                                                                 element: 'ProductName' 
+                                                               }
+                                                              ] 
+                    }
       @Consumption.valueHelpDefinition: [{ 
                                            entity : { name:    'zpip_c_prodgr_vh', 
                                                       element: 'pgid' } 

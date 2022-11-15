@@ -275,7 +275,7 @@ define view zpip_c_alp_market_order
   key OrderUuid,
       
       @UI: {
-             lineItem:       [{qualifier: 'LineMainChart', position: 30 }],
+             lineItem:       [{qualifier: 'LineMainChart', position: 30}],
              identification: [{ position: 10 }],
              fieldGroup:     [{ position: 10,     qualifier: 'BasicData'}],
              dataPoint:      {  title:'Order ID', qualifier: 'Orderid' }
@@ -283,7 +283,7 @@ define view zpip_c_alp_market_order
       Orderid,
       
       @UI: {
-             lineItem:       [{qualifier: 'LineMainChart', position: 15 }],
+             lineItem:       [{qualifier: 'LineMainChart', position: 15}],
              selectionField: [{ position: 10 }],
              identification: [{ position: 20 }],
              fieldGroup:     [{ position: 20,    qualifier: 'BasicData'}],
@@ -461,5 +461,6 @@ define view zpip_c_alp_market_order
      
       Amountcurr,
       KPITargGrossIncome,
-      KPITargGrossAmount
+      KPITargGrossAmount,
+      _Product
 }

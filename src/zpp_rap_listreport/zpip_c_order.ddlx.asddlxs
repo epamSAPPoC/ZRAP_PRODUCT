@@ -96,7 +96,8 @@ annotate view zpip_c_order with
   
     @UI: { 
          lineItem:       [ { position: 10, importance: #HIGH } ],
-         fieldGroup:     [ { position: 5, qualifier: 'BasicData' }],  
+         fieldGroup:     [ { position: 5, 
+                             qualifier: 'BasicData' }],  
          identification: [ { position: 5, label: 'Product Name' }]
        } 
   ProductName;

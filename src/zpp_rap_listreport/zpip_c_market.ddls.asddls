@@ -45,7 +45,7 @@ define view entity zpip_c_market
       ISOCode,
       
       @Consumption.valueHelpDefinition: [{
-                                           entity : { name: 'zpip_c_country_vh', element: 'Country' } 
+                                           entity : { name: 'zpip_c_country_vh', element: 'country' } 
                                         }]
       _Country.Country  as Country,
       

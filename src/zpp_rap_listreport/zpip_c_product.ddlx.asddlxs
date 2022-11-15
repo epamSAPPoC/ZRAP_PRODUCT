@@ -159,30 +159,28 @@ annotate view zpip_c_product with
       }
 --------------------------------------------------------------------        
   @UI.hidden: true
+  Imageurl; 
+  
+  @UI.hidden: true
   ProdUuid;
 
   @UI: { 
-         lineItem:       [{ position: 10, importance: #HIGH },
-                          { semanticObjectAction: 'ovpreportaction', type: #FOR_INTENT_BASED_NAVIGATION }
-                         ],
+         lineItem:       [{ position: 10, importance: #HIGH }],
          identification: [{ position: 10, label: 'Product ID' }],
          selectionField: [{ position: 10 }],
-         fieldGroup:     [{ position: 10, qualifier: 'BasicData'}],
+         fieldGroup:     [{ position: 10, 
+                            qualifier: 'BasicData'}],
          dataPoint:      {  title:'Product ID', qualifier: 'Prodid' }
        }
-  @Consumption.semanticObject: 'ovpsemanticobject'
   Prodid;
   
   @UI: { 
-         lineItem:       [ { position: 20, importance: #HIGH },
-                           { semanticObjectAction: 'alpreportaction', type: #FOR_INTENT_BASED_NAVIGATION } 
-                         ],
+         lineItem:       [ { position: 20, importance: #HIGH } ],
          identification: [ { position: 20, label: 'Product gr.' } ],
          selectionField: [ { position: 20 } ],
-         fieldGroup:     [ { position: 20, qualifier: 'BasicData'} ],
+         fieldGroup:     [ { position: 20, qualifier: 'BasicData' } ],
          textArrangement: #TEXT_LAST
        }
-  @Consumption.semanticObject: 'alpsemantic'
   Pgid;
   
   @UI.fieldGroup: [ { position: 25, qualifier: 'BasicData', label: 'Product Group Translation'} ]
@@ -220,12 +218,6 @@ annotate view zpip_c_product with
                        { position: 20, value: 'Width', type: #STANDARD, qualifier: 'AllMeasures'}
                       ]
   Width;
-
-//  @UI: { 
-//       lineItem:       [ { position: 100 } ],
-//       identification: [ { position: 100 } ] 
-//      }
-//  SizeUom;
 
   @UI: { 
          lineItem:       [{ 
@@ -273,8 +265,7 @@ annotate view zpip_c_product with
   @UI.hidden: true
   PhaseCriticality;
   
-  @UI.hidden: true
-  Imageurl;
+  
 
   @UI.hidden:     false
   @UI.fieldGroup: [{ position: 10, qualifier: 'AdminData' }]
